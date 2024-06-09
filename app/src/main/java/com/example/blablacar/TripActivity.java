@@ -28,9 +28,13 @@ public class TripActivity extends AppCompatActivity {
         // Initialisez la liste des trajets
         List<Trajet> trajets = new ArrayList<>();
 
+        // -------
+
         trajets.add(new Trajet("12:20","12:50",12));
         trajets.add(new Trajet("12:20","12:50",11));
 
+
+        // ------
 
         CustomAdapter adapter = new CustomAdapter(this, trajets);
 
