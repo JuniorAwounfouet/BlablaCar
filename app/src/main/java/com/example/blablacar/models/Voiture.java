@@ -1,4 +1,4 @@
-package com.example.blablacar;
+package com.example.blablacar.models;
 
 public class Voiture {
     private String marque;

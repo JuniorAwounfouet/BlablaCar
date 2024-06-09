@@ -1,4 +1,7 @@
-package com.example.blablacar;
+package com.example.blablacar.models;
+
+import com.example.blablacar.models.Utilisateur;
+import com.example.blablacar.models.Voiture;
 
 public class Conducteur extends Utilisateur {
     private Voiture voiture;
