@@ -32,6 +32,19 @@ dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.libraries.places:places:2.4.0")
+    implementation("com.google.android.gms:play-services-location:18.0.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.android.volley:volley:1.2.1")
+//    implementation("org.openstreetmap:osmdroid-android:6.2.1")
+//    implementation("org.osmdroid:osmdroid-mapsforge:6.2.1")
+//    implementation("org.osmdroid:osmdroid-api:6.2.1")
+//    implementation("org.osmdroid:osmdroid-third-party:6.2.1")
+    implementation("org.osmdroid:osmdroid-android:6.1.10")
+
+
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

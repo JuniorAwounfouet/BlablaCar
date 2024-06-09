@@ -9,6 +9,10 @@
     android:padding="16dp"
     tools:context=".Research">
 
-
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </LinearLayout>
