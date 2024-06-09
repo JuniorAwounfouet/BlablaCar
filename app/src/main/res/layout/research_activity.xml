@@ -7,38 +7,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".ResearchActivity">
 
-    <Button
+    <AutoCompleteTextView
+        android:id="@+id/depart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="register"
-        android:id="@+id/register"
-        android:layout_marginTop="20dp"
-        />
+        android:hint="Depart" />
 
-    <Button
+    <AutoCompleteTextView
+        android:id="@+id/destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="login"
-        android:id="@+id/login"
-        android:layout_marginTop="20dp"
-        />
+        android:hint="Destination"/>
 
-    <ListView
+    <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/listView"
-        />
+        android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/buttonResearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="logout"
-        android:id="@+id/logout"
-        android:layout_marginTop="20dp"
-        />
+        android:text="Rechercher" />
+
+    <Button
+        android:id="@+id/buttonDisconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disconnect" />
 
 </LinearLayout>

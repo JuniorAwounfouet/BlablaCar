@@ -1,5 +1,7 @@
 package com.example.blablacar;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -26,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText pwdInput;
     private Button buttonRegister;
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
                 } else {
                     registerUser(txt_email, txt_pwd);
+                    startActivity(new Intent(RegisterActivity.this, ResearchActivity.class));
+                    finish();
                 }
             }
         });
