@@ -9,45 +9,13 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="register"
-        android:id="@+id/register"
-        android:layout_marginTop="20dp"
-    />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="login"
-        android:id="@+id/login"
-        android:layout_marginTop="20dp"
-    />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/listView"
-    />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        android:id="@+id/logout"
-        android:layout_marginTop="20dp"
-    />
-
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/depart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Depart" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,5 +31,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rechercher" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:id="@+id/register"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/login"
+        android:layout_marginTop="20dp"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/listView"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:id="@+id/logout"
+        android:layout_marginTop="20dp"
+        />
 
 </LinearLayout>

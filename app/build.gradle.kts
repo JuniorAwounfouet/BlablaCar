@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -37,6 +36,19 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation("com.google.android.libraries.places:places:2.4.0")
+    implementation("com.google.android.gms:play-services-location:18.0.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.android.volley:volley:1.2.1")
+//    implementation("org.openstreetmap:osmdroid-android:6.2.1")
+//    implementation("org.osmdroid:osmdroid-mapsforge:6.2.1")
+//    implementation("org.osmdroid:osmdroid-api:6.2.1")
+//    implementation("org.osmdroid:osmdroid-third-party:6.2.1")
+    implementation("org.osmdroid:osmdroid-android:6.1.10")
+
+
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
