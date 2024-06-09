@@ -99,8 +99,8 @@ public class ResearchActivity extends AppCompatActivity {
         buttonResearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, Research.class));
-                //finish();
+                startActivity(new Intent(ResearchActivity.this, TripActivity.class));
+                finish();
             }
         });
         buttonDiconnect.setOnClickListener(new View.OnClickListener() {
