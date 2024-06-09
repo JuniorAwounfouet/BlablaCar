@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810074794871",
+    "project_id": "blablacar-d1a31",
+    "storage_bucket": "blablacar-d1a31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810074794871:android:220513d1478a076d754f72",
+        "android_client_info": {
+          "package_name": "com.example.blablacar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_cEQhQQlc1-YzUJVgd4LW5GtHZRsuV_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
