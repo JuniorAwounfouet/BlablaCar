@@ -4,10 +4,23 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonLogin;
     private Button buttonRegister;
+    private Button buttonLogout;
+    private ListView listView;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -34,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         buttonLogin = findViewById(R.id.login);
         buttonRegister = findViewById(R.id.register);
+        buttonLogout = findViewById(R.id.logout);
+        listView = findViewById(R.id.listView);
 
         buttonRegister.setOnClickListener((v) -> {
             startActivity(new Intent(MainActivity.this, RegisterActivity.class));
@@ -43,6 +61,49 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener((v) -> {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
+        });
+
+        buttonLogout.setOnClickListener((v) -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(MainActivity.this, MainActivity.class));
+            finish();
+        });
+
+        /*HashMap<String, Object> map = new HashMap<>();
+        map.put("email", "qsdwaer@blablacar.com");
+        map.put("mpd", "qsdwaer");
+        map.put("nom", "Qsd Waer");
+
+        FirebaseDatabase.getInstance()
+                        .getReference()
+                        .child("Utilisateurs")
+                        .child("9")
+                        .setValue(map);*/
+
+        ArrayList<String> list = new ArrayList<String>();
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.list_item, list);
+        listView.setAdapter(adapter);
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Utilisateurs");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
+
+                for (DataSnapshot s : snapshot.getChildren()) {
+                    Utilisateur utilisateur = s.getValue(Utilisateur.class);
+                    String txt = utilisateur.getNom() + " : " + utilisateur.getEmail();
+
+                    list.add(txt);
+                }
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
     }
 
