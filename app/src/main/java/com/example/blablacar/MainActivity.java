@@ -35,20 +35,14 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.login);
         buttonRegister = findViewById(R.id.register);
 
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-                finish();
-            }
+        buttonRegister.setOnClickListener((v) -> {
+            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            finish();
         });
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                finish();
-            }
+        buttonLogin.setOnClickListener((v) -> {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         });
     }
 
