@@ -71,32 +71,6 @@ public class MainActivity extends AppCompatActivity {
                         .child("Utilisateurs")
                         .child("9")
                         .setValue(map);*/
-
-        ArrayList<String> list = new ArrayList<String>();
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.list_item, list);
-        listView.setAdapter(adapter);
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("utilisateurs");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-
-                for (DataSnapshot s : snapshot.getChildren()) {
-                    Utilisateur utilisateur = s.getValue(Utilisateur.class);
-                    String txt = utilisateur.getNom() + " : " + utilisateur.getEmail();
-
-                    list.add(txt);
-                }
-
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
 }
